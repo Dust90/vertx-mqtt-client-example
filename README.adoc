@@ -1,0 +1,9 @@
+== Building the project
+
+To build the project, just use:
+
+----
+mvn clean package
+----
+
+It generates a _fat-jar_ in the `target` directory.
