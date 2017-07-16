@@ -1,3 +1,13 @@
+== Prerequisites
+
+First of all you need to install vertx-mqtt-client into your local  maven repository
+
+----
+$ git clone https://github.com/vert-x3/vertx-mqtt-client
+$ cd vertx-mqtt-client
+$ mvn clean install
+----
+
 == Building the project
 
 To build the project, just use:
