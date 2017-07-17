@@ -11,19 +11,22 @@ public class MainVerticle extends AbstractVerticle {
   @Override
   public void start() {
     MqttClientOptions options = new MqttClientOptions()
+      // specify borker host
       .setHost("broker.hivemq.com");
+
     MqttClient client = MqttClient.create(vertx, options);
 
     client.publishHandler(s -> {
       try {
         String message = new String(s.payload().getBytes(), "UTF-8");
-        System.out.println(String.format("Receive message with content: %s from topic \"%s\"", message, s.topicName()));
+        System.out.println(String.format("Receive message with content: \"%s\" from topic \"%s\"", message, s.topicName()));
       } catch (UnsupportedEncodingException e) {
         e.printStackTrace();
       }
     });
 
     client.connect(s -> {
+      // subscribe to all subtopics
       client.subscribe("rpi2/#", 0);
     });
 
