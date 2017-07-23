@@ -11,7 +11,7 @@ public class MainVerticle extends AbstractVerticle {
   @Override
   public void start() {
     MqttClientOptions options = new MqttClientOptions()
-      // specify borker host
+      // specify broker host
       .setHost("iot.eclipse.org");
 
     MqttClient client = MqttClient.create(vertx, options);
@@ -29,8 +29,5 @@ public class MainVerticle extends AbstractVerticle {
       // subscribe to all subtopics
       client.subscribe("#", 0);
     });
-
-
   }
-
 }

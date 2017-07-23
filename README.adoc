@@ -3,7 +3,7 @@
 First of all you need to install vertx-mqtt-client into your local  maven repository
 
 ----
-$ git clone https://github.com/vert-x3/vertx-mqtt-client
+$ git clone https://github.com/Sammers21/vertx-mqtt-client
 $ cd vertx-mqtt-client
 $ mvn clean install
 ----
