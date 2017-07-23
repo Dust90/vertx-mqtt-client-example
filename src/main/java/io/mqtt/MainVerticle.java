@@ -12,7 +12,7 @@ public class MainVerticle extends AbstractVerticle {
   public void start() {
     MqttClientOptions options = new MqttClientOptions()
       // specify borker host
-      .setHost("broker.hivemq.com");
+      .setHost("iot.eclipse.org");
 
     MqttClient client = MqttClient.create(vertx, options);
 
@@ -27,7 +27,7 @@ public class MainVerticle extends AbstractVerticle {
 
     client.connect(s -> {
       // subscribe to all subtopics
-      client.subscribe("rpi2/#", 0);
+      client.subscribe("#", 0);
     });
 
 
