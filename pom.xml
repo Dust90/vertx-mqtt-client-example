@@ -18,7 +18,7 @@
   <dependencies>
     <dependency>
       <groupId>io.vertx</groupId>
-      <artifactId>vertx-mqtt-client</artifactId>
+      <artifactId>vertx-mqtt</artifactId>
       <version>${vertx.version}</version>
     </dependency>
   </dependencies>
