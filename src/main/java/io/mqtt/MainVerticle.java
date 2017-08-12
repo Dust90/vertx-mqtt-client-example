@@ -10,9 +10,11 @@ public class MainVerticle extends AbstractVerticle {
 
   @Override
   public void start() {
-    MqttClientOptions options = new MqttClientOptions()
+    MqttClientOptions options = new MqttClientOptions();
       // specify broker host
-      .setHost("iot.eclipse.org");
+      options.setHost("iot.eclipse.org");
+      // specify max size of message in bytes
+      options.setMaxMessageSize(100_000_000);
 
     MqttClient client = MqttClient.create(vertx, options);
 
